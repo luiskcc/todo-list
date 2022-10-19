@@ -26,9 +26,6 @@ class TasksController < ApplicationController
 
 
     def edit
-
-         @task = Task.find(find_task) 
-
     end
 
 
