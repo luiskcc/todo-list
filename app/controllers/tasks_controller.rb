@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
 
-    before_action :find_taks, only:[:show, :edit, :update, :destroy ]
+    before_action :find_task, only:[:show, :edit, :update, :destroy ]
 
 
 
@@ -13,7 +13,6 @@ class TasksController < ApplicationController
 
     def show
 
-        @task = Task.find(find_task) 
 
     end
 
@@ -69,6 +68,6 @@ class TasksController < ApplicationController
     end
 
     def find_task
-         @task = Task.fin(params[:id])
+         @task = Task.find(params[:id])
     end
 end
