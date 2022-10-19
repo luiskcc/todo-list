@@ -1,1 +1,8 @@
-<h1> Yay tasks view </h1>
+<%  @tasks.each do |task| %>
+
+
+<h2> <%= task.title %></h2>
+<p><%= task.description %> </p>
+<p><%= task.status %> </p>
+
+<% end %>
