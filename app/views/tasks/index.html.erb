@@ -1,0 +1,30 @@
+<%  @tasks.each do |task| %>
+
+<% if task.completed? %>
+
+<div class="card">
+  <h5 class="card-header"><strike><%= link_to  task.title, task %></strike></h5>
+  <div class="card-body">
+    <h5 class="card-title"><%= task.description %></h5>
+    <p class="card-text">Task completed <%= time_ago_in_words(task.completed_at) %> ago </p>
+    <%= link_to complete_task_path(task), method: :patch do %>
+  </div>
+
+<% end %>
+<% else %>
+
+
+
+<h2> <%= link_to  task.title, task %></h2>
+<p><%= task.description %> </p>
+<p><%= task.status %> </p>
+<%= link_to "MARK AS COMPLETE", complete_task_path(task), method: :patch %>
+
+<% end %>
+<% end %>
+
+
+
+
+
+
