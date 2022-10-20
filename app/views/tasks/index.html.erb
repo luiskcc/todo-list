@@ -1,14 +1,20 @@
-<h1> TO DO LIST <h1>
 <%  @tasks.each do |task| %>
 
-<% if task.completed?%>
-<h2> <%= link_to  task.title, task %></h2>
-<p><%= task.description %> </p>
-<p><%= task.status %> </p>
-<%= link_to "MARK AS COMPLETE", complete_task_path(task), method: :patch %>
+<% if task.completed? %>
+
+<div class="card">
+  <h5 class="card-header"><%= link_to  task.title, task %></h5>
+  <div class="card-body">
+    <h5 class="card-title"><%= task.description %></h5>
+    <p class="card-text">completed at</p>
+ 
+    <div class="btn btn-success btn-lg"><%= link_to "Completed", complete_task_path(task), method: :patch %></div>
+  </div>
+
 <% else %>
 
-<h1> COMPLETED TASKS <h1>
+
+
 
 <h2> <%= link_to  task.title, task %></h2>
 <p><%= task.description %> </p>
@@ -16,19 +22,11 @@
 <%= link_to "MARK AS COMPLETE", complete_task_path(task), method: :patch %>
 
 <% end %>
-
 <% end %>
+
+
 
 
 
 
 <%= link_to "New Task", new_task_path %>
-
-<br>
-<br>
-<br>
-<br>
-<hr>
-
-
-
