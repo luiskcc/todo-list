@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+    
 
     before_action :find_task, only:[:show, :edit, :update, :destroy ]
 
@@ -19,8 +20,7 @@ class TasksController < ApplicationController
 
 
     def new
-        @task  = Task.new, Time.now
-
+        @task  = Task.new
 
     end
 
