@@ -28,8 +28,7 @@ class TasksController < ApplicationController
     def edit
     end
 
-
-     
+    
     def update
 
         if @task.update(task_params)
